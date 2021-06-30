@@ -1,10 +1,88 @@
 <html>
     <head>
-        <title>∀</title>
-        <script src="https://app.snicket.net/assets/inpage/inpage.bundle.js"></script>
-    </head>
+        <!-- if you are reading this you must be bored, there's nothing exciting to see here just some plain html/css -->
+        <style>
+            .body {
+                margin: 0;
+            }
 
-    <center>
-        <h1>∀</h1>
-    </center>
+            .main {
+                height: 100%;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                background: darkslategrey;
+                display: flex;
+                font-family: Arial, Helvetica, sans-serif;
+                flex-direction: column;
+            }
+
+            .grey {
+                font-weight: bold;
+                color: lightslategray;
+            }
+
+            .icon_list {
+                padding-top: 1rem;
+            }
+
+            .img_link {
+                text-decoration: none;
+                padding: 0 1rem 0 1rem;
+            }
+
+            .icon {
+                height: 4rem;
+            }
+
+            .rounded {
+                background-color: white;
+                border-radius: .5rem;
+            }
+
+            .absolute {
+                position: absolute;
+                height: 100%;
+                pointer-events: none;
+            }
+        </style>
+    </head>
+    <body class='body'>
+        <div class='main'>
+            <span class='eacaps grey'>@eacaps</span>
+            <div class='icon_list'>
+                <a class='img_link' href='https://github.com/eacaps'>
+                    <img class='icon' src='GitHub-Mark-Light-64px.png'/>
+                </a>
+                <!-- yes, medium has a newer logo, but this one is dope-->
+                <a class='img_link' href='https://medium.com/@eacaps'>
+                    <img class='icon rounded' src='favpng_medium-blog-icon-design.png'/>
+                </a>
+            </div>
+        </div>
+        <div></div>
+    </body>
+    <script>
+        console.log('did you really open the console for this page?');
+
+        // shamelessly started from: https://stackoverflow.com/a/45576888
+        function onKonamiCode(cb) {
+            let input = '';
+            const key = '38384040373937396665';
+            document.addEventListener('keydown', function (e) {
+                input += ("" + e.keyCode);
+                
+                if(!key.startsWith(input)) {
+                    input = ("" + e.keyCode);
+                }
+                if (input === key) {
+                    return cb();
+                }
+            });
+        }
+
+        onKonamiCode(() => {
+            document.querySelector('.eacaps').insertAdjacentHTML('beforebegin', "<marquee direction='down' behavior='alternate' class='absolute'><marquee behavior='alternate'><span class='grey'>@eacaps</span><marquee></marquee>")
+        })
+    </script>
 </html>
