@@ -22,6 +22,10 @@
                 color: lightslategray;
             }
 
+            .eacaps {
+                font-size: 4rem;
+            }
+
             .icon_list {
                 padding-top: 1rem;
             }
@@ -51,11 +55,11 @@
         <div class='main'>
             <span class='eacaps grey'>@eacaps</span>
             <div class='icon_list'>
-                <a class='img_link' href='https://github.com/eacaps'>
+                <a class='img_link' href='https://github.com/eacaps' target='_blank'>
                     <img class='icon' src='GitHub-Mark-Light-64px.png'/>
                 </a>
                 <!-- yes, medium has a newer logo, but this one is dope-->
-                <a class='img_link' href='https://medium.com/@eacaps'>
+                <a class='img_link' href='https://medium.com/@eacaps' target='_blank'>
                     <img class='icon rounded' src='favpng_medium-blog-icon-design.png'/>
                 </a>
             </div>
@@ -63,7 +67,7 @@
         <div></div>
     </body>
     <script>
-        console.log('did you really open the console for this page?');
+        console.log('nothing to see here...');
 
         // shamelessly started from: https://stackoverflow.com/a/45576888
         function onKonamiCode(cb) {
@@ -82,7 +86,7 @@
         }
 
         onKonamiCode(() => {
-            document.querySelector('.eacaps').insertAdjacentHTML('beforebegin', "<marquee direction='down' behavior='alternate' class='absolute'><marquee behavior='alternate'><span class='grey'>@eacaps</span><marquee></marquee>")
+            document.querySelector('.eacaps').insertAdjacentHTML('beforebegin', "<marquee direction='down' behavior='alternate' class='absolute' scrolldelay='60' scrollamount='15'><marquee behavior='alternate' scrolldelay='60' scrollamount='15'><span class='grey'>@eacaps</span><marquee></marquee>")
         })
     </script>
 </html>
